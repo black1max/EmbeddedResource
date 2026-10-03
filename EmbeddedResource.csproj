@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resource/Resource.txt" LogicalName="ResourceA" />
+    <EmbeddedResource Include="Resource/binary1.dat" LogicalName="Binary1" />
   </ItemGroup>
 
 </Project>

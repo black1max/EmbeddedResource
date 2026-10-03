@@ -18,4 +18,20 @@ class EResource {
     }
     return res;
   }
+
+  public static byte[]? LoadBinaryResource(string name = "Binary1") {
+    var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+    using var stream = assembly.GetManifestResourceStream(name);
+    if (stream == null) {
+      return null;
+    }
+    using var memoryStream = new MemoryStream();
+    stream.CopyTo(memoryStream);
+    return memoryStream.ToArray();
+  }
+
+  public static Stream? GetResourceStream(string name = "Binary1") {
+    var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+    return assembly.GetManifestResourceStream(name);
+  }
 }
